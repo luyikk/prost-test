@@ -18,17 +18,14 @@ fn main()->anyhow::Result<()> {
     };
 
     let data = a.encode_to_vec();
-
     println!("{:?}",data);
 
-    let b= protobuf::Foo::decode(&data[..])?;
-    println!("{:?}", protobuf::Foo::get_msg_id());
-    println!("{:?}", b.get_id());
-
-    let a=123;
-    match a{
+    let type_id=123;
+    match type_id{
         protobuf::FOO_ID =>{
-            println!("{:?}", protobuf::Foo::get_msg_id());
+            let b= protobuf::Foo::decode(&data[..])?;
+            println!("{:?}", protobuf::Foo::get_type_id());
+            println!("{:?}", b.get_type_id());
         },
         _=>{
 

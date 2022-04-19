@@ -3,6 +3,7 @@ package RunTT;
 
 enum PhoneType {
    MOBILE = 0;
+   //AVV
    HOME = 1;
    WORK = 2;
 }

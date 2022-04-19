@@ -31,6 +31,7 @@ pub mod foo {
 #[repr(i32)]
 pub enum PhoneType {
     Mobile = 0,
+    ///AVV
     Home = 1,
     Work = 2,
 }
