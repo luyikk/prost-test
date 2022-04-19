@@ -1,0 +1,25 @@
+syntax = "proto3";
+package RunTT;
+
+enum PhoneType {
+   MOBILE = 0;
+   HOME = 1;
+   WORK = 2;
+}
+
+message PhoneNumber {
+   string number = 1;
+   PhoneType type = 2;
+}
+
+// aaaa
+message Foo{
+   enum MsgId{None=0;Id=123;}
+   // bbb
+   string name=1;
+   // ccc
+   int32 id=2;
+
+   // xxxx
+   repeated PhoneNumber phones = 4;
+}
