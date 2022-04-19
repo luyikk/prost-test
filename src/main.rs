@@ -2,6 +2,7 @@
 mod protobuf;
 
 use prost::Message;
+use prost_types::FileDescriptorSet;
 use crate::protobuf::{MsgId, PhoneNumber};
 
 
@@ -18,7 +19,8 @@ fn main()->anyhow::Result<()> {
     };
 
     let data = a.encode_to_vec();
-    println!("{:?}",data);
+
+    let x= FileDescriptorSet::decode(&*std::fs::read("./proto/a.bin")?)?;
 
     let type_id=123;
     match type_id{
@@ -31,6 +33,9 @@ fn main()->anyhow::Result<()> {
 
         }
     }
+
+
+
 
     Ok(())
 }
