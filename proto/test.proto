@@ -15,7 +15,15 @@ message PhoneNumber {
 
 // aaaa
 message Foo{
-   enum MsgId{None=0;Id=123;}
+   enum MsgId { None=0; Id = 150001; }
+
+   //通用返回失败
+   message Fail{
+      enum MsgId {  None=0;Id = 150004; }
+      int64 number=1;
+      string message=2;
+   }
+
    // bbb
    string name=1;
    // ccc
@@ -23,4 +31,18 @@ message Foo{
 
    // xxxx
    repeated PhoneNumber phones = 4;
+}
+
+//通用返回失败
+message Fail{
+   enum MsgId {  None=0;Id = 150002; }
+   int64 number=1;
+   string message=2;
+}
+
+//通用错误返回
+message Error{
+   enum MsgId {  None=0;Id = 150003; }
+   int64 number=1;
+   string message=2;
 }
