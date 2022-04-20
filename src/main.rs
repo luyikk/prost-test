@@ -5,7 +5,7 @@ use prost::Message;
 use prost_msg_id::MsgId;
 
 fn main() -> anyhow::Result<()> {
-    protobuf::msg_ids();
+    println!("{:?}", protobuf::msg_ids());
     let a = protobuf::Foo {
         name: "123123".to_string(),
         id: 10,
@@ -15,17 +15,20 @@ fn main() -> anyhow::Result<()> {
         }],
     };
 
-    let data = a.encode_to_vec();
-    let x= a.get_msg_id();
-    // let type_id = 123;
-    // match type_id {
-    //     protobuf::FOO_ID => {
-    //         let b = protobuf::Foo::decode(&data[..])?;
-    //         println!("{:?}", protobuf::Foo::get_msg_id());
-    //         println!("{:?}", b.get_type_id());
-    //     }
-    //     _ => {}
-    // }
+    let data = get_buff(&a);
+    let type_id = protobuf::Foo::get_msg_id();
+    match type_id {
+        protobuf::FOO_ID => {
+            let b = protobuf::Foo::decode(&data[..])?;
+            println!("{:?}", b.get_msg_id());
+        }
+        _ => {}
+    }
 
     Ok(())
+}
+
+fn get_buff<T: Message + MsgId>(a: &T) -> Vec<u8> {
+    println!("{}", a.get_msg_id());
+    a.encode_to_vec()
 }

@@ -18,17 +18,24 @@ pub struct Foo {
     #[prost(message, repeated, tag = "4")]
     pub phones: ::prost::alloc::vec::Vec<PhoneNumber>,
 }
+
+/// aaaa
+#[allow(dead_code)]
+pub const FOO_ID: i32 = Foo::get_msg_id();
+
 impl Foo {
     #[allow(dead_code)]
     pub const fn get_msg_id() -> i32 {
         150001
     }
 }
+
 impl ::prost_msg_id::MsgId for Foo {
     fn get_msg_id(&self) -> i32 {
-Self::get_msg_id()
+        Self::get_msg_id()
     }
 }
+
 /// Nested message and enum types in `Foo`.
 pub mod foo {
     ///通用返回失败
@@ -39,17 +46,24 @@ pub mod foo {
         #[prost(string, tag = "2")]
         pub message: ::prost::alloc::string::String,
     }
+
+    ///通用返回失败
+    #[allow(dead_code)]
+    pub const FAIL_ID: i32 = Fail::get_msg_id();
+
     impl Fail {
         #[allow(dead_code)]
         pub const fn get_msg_id() -> i32 {
             150004
         }
     }
+
     impl ::prost_msg_id::MsgId for Fail {
         fn get_msg_id(&self) -> i32 {
-Self::get_msg_id()
+            Self::get_msg_id()
         }
     }
+
     /// Nested message and enum types in `Fail`.
     pub mod fail {
         #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -74,17 +88,24 @@ pub struct Fail {
     #[prost(string, tag = "2")]
     pub message: ::prost::alloc::string::String,
 }
+
+///通用返回失败
+#[allow(dead_code)]
+pub const FAIL_ID: i32 = Fail::get_msg_id();
+
 impl Fail {
     #[allow(dead_code)]
     pub const fn get_msg_id() -> i32 {
         150002
     }
 }
+
 impl ::prost_msg_id::MsgId for Fail {
     fn get_msg_id(&self) -> i32 {
-Self::get_msg_id()
+        Self::get_msg_id()
     }
 }
+
 /// Nested message and enum types in `Fail`.
 pub mod fail {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -102,17 +123,24 @@ pub struct Error {
     #[prost(string, tag = "2")]
     pub message: ::prost::alloc::string::String,
 }
+
+///通用错误返回
+#[allow(dead_code)]
+pub const ERROR_ID: i32 = Error::get_msg_id();
+
 impl Error {
     #[allow(dead_code)]
     pub const fn get_msg_id() -> i32 {
         150003
     }
 }
+
 impl ::prost_msg_id::MsgId for Error {
     fn get_msg_id(&self) -> i32 {
-Self::get_msg_id()
+        Self::get_msg_id()
     }
 }
+
 /// Nested message and enum types in `Error`.
 pub mod error {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -135,9 +163,9 @@ pub enum PhoneType {
 #[allow(dead_code)]
 pub const fn msg_ids()->&'static [i32]{
     &[
-        150002, //.RunTT.Fail
-        150003, //.RunTT.Error
         150004, //.RunTT.Foo.Fail
+        150002, //.RunTT.Fail
         150001, //.RunTT.Foo
+        150003, //.RunTT.Error
     ]
 }
