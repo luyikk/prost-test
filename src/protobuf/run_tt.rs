@@ -24,6 +24,11 @@ impl Foo {
         150001
     }
 }
+impl ::prost_msg_id::MsgId for Foo {
+    fn get_msg_id(&self) -> i32 {
+Self::get_msg_id()
+    }
+}
 /// Nested message and enum types in `Foo`.
 pub mod foo {
     ///通用返回失败
@@ -40,11 +45,14 @@ pub mod foo {
             150004
         }
     }
+    impl ::prost_msg_id::MsgId for Fail {
+        fn get_msg_id(&self) -> i32 {
+Self::get_msg_id()
+        }
+    }
     /// Nested message and enum types in `Fail`.
     pub mod fail {
-        #[derive(
-            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
-        )]
+        #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
         #[repr(i32)]
         pub enum MsgId {
             None = 0,
@@ -72,6 +80,11 @@ impl Fail {
         150002
     }
 }
+impl ::prost_msg_id::MsgId for Fail {
+    fn get_msg_id(&self) -> i32 {
+Self::get_msg_id()
+    }
+}
 /// Nested message and enum types in `Fail`.
 pub mod fail {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -95,6 +108,11 @@ impl Error {
         150003
     }
 }
+impl ::prost_msg_id::MsgId for Error {
+    fn get_msg_id(&self) -> i32 {
+Self::get_msg_id()
+    }
+}
 /// Nested message and enum types in `Error`.
 pub mod error {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -115,11 +133,11 @@ pub enum PhoneType {
 
 ///get all msg type id
 #[allow(dead_code)]
-pub const fn msg_ids() -> &'static [i32] {
+pub const fn msg_ids()->&'static [i32]{
     &[
+        150002, //.RunTT.Fail
         150003, //.RunTT.Error
         150004, //.RunTT.Foo.Fail
-        150002, //.RunTT.Fail
         150001, //.RunTT.Foo
     ]
 }

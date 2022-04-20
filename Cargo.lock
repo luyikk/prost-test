@@ -204,6 +204,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost-msg-id"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b03c6acc44627d89e9577014012a034eec1dfc69276a72590bf9ea6537121e05"
+
+[[package]]
 name = "prost-test"
 version = "0.1.0"
 dependencies = [
@@ -211,6 +217,7 @@ dependencies = [
  "paste",
  "prost",
  "prost-build",
+ "prost-msg-id",
  "prost-types",
 ]
 
