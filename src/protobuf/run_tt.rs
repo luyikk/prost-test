@@ -118,8 +118,8 @@ pub enum PhoneType {
 pub const fn msg_ids() -> &'static [i32] {
     &[
         150001, //.RunTT.Foo
+        150004, //.RunTT.Foo.Fail
         150003, //.RunTT.Error
         150002, //.RunTT.Fail
-        150004, //.RunTT.Foo.Fail
     ]
 }
