@@ -163,9 +163,9 @@ pub enum PhoneType {
 #[allow(dead_code)]
 pub const fn msg_ids()->&'static [i32]{
     &[
-        150004, //.RunTT.Foo.Fail
-        150002, //.RunTT.Fail
-        150001, //.RunTT.Foo
         150003, //.RunTT.Error
+        150002, //.RunTT.Fail
+        150004, //.RunTT.Foo.Fail
+        150001, //.RunTT.Foo
     ]
 }
