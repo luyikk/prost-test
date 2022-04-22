@@ -1,6 +1,6 @@
 mod protobuf;
 
-use crate::protobuf::PhoneNumber;
+use crate::protobuf::{PhoneNumber, PhoneType};
 use prost::Message;
 use prost_msg_id::MsgId;
 
@@ -10,8 +10,8 @@ fn main() -> anyhow::Result<()> {
         name: "123123".to_string(),
         id: 10,
         phones: vec![PhoneNumber {
-            number: "33321".to_string(),
-            r#type: 11,
+            number: "33321111".to_string(),
+            r#type: PhoneType::Home.into(),
         }],
     };
 

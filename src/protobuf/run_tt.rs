@@ -5,6 +5,32 @@ pub struct PhoneNumber {
     #[prost(enumeration = "PhoneType", tag = "2")]
     pub r#type: i32,
 }
+
+#[allow(dead_code)]
+pub const PHONE_NUMBER_ID: i32 = PhoneNumber::get_msg_id();
+
+impl PhoneNumber {
+    #[allow(dead_code)]
+    pub const fn get_msg_id() -> i32 {
+        150000
+    }
+}
+
+impl ::prost_msg_id::MsgId for PhoneNumber {
+    fn get_msg_id(&self) -> i32 {
+        Self::get_msg_id()
+    }
+}
+
+/// Nested message and enum types in `PhoneNumber`.
+pub mod phone_number {
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+    #[repr(i32)]
+    pub enum MsgId {
+        None = 0,
+        Id = 150000,
+    }
+}
 /// aaaa
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Foo {
@@ -163,9 +189,10 @@ pub enum PhoneType {
 #[allow(dead_code)]
 pub const fn msg_ids()->&'static [i32]{
     &[
-        150003, //.RunTT.Error
-        150002, //.RunTT.Fail
         150004, //.RunTT.Foo.Fail
         150001, //.RunTT.Foo
+        150000, //.RunTT.PhoneNumber
+        150003, //.RunTT.Error
+        150002, //.RunTT.Fail
     ]
 }
