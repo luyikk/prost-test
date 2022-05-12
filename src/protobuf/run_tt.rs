@@ -22,6 +22,18 @@ impl ::prost_msg_id::MsgId for PhoneNumber {
     }
 }
 
+impl TryFrom<&[u8]> for PhoneNumber {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value)
+    }
+}
+impl TryFrom<Vec<u8>> for PhoneNumber {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: Vec<u8>) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value.as_slice())
+    }
+}
 /// Nested message and enum types in `PhoneNumber`.
 pub mod phone_number {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -62,6 +74,18 @@ impl ::prost_msg_id::MsgId for Foo {
     }
 }
 
+impl TryFrom<&[u8]> for Foo {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value)
+    }
+}
+impl TryFrom<Vec<u8>> for Foo {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: Vec<u8>) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value.as_slice())
+    }
+}
 /// Nested message and enum types in `Foo`.
 pub mod foo {
     ///通用返回失败
@@ -90,6 +114,18 @@ pub mod foo {
         }
     }
 
+    impl TryFrom<&[u8]> for Fail {
+        type Error = ::prost::DecodeError;
+        fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+            ::prost::Message::decode(value)
+        }
+    }
+    impl TryFrom<Vec<u8>> for Fail {
+        type Error = ::prost::DecodeError;
+        fn try_from(value: Vec<u8>) -> Result<Self, Self::Error> {
+            ::prost::Message::decode(value.as_slice())
+        }
+    }
     /// Nested message and enum types in `Fail`.
     pub mod fail {
         #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -132,6 +168,18 @@ impl ::prost_msg_id::MsgId for Fail {
     }
 }
 
+impl TryFrom<&[u8]> for Fail {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value)
+    }
+}
+impl TryFrom<Vec<u8>> for Fail {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: Vec<u8>) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value.as_slice())
+    }
+}
 /// Nested message and enum types in `Fail`.
 pub mod fail {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -167,6 +215,18 @@ impl ::prost_msg_id::MsgId for Error {
     }
 }
 
+impl TryFrom<&[u8]> for Error {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value)
+    }
+}
+impl TryFrom<Vec<u8>> for Error {
+    type Error = ::prost::DecodeError;
+    fn try_from(value: Vec<u8>) -> Result<Self, Self::Error> {
+        ::prost::Message::decode(value.as_slice())
+    }
+}
 /// Nested message and enum types in `Error`.
 pub mod error {
     #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -189,10 +249,10 @@ pub enum PhoneType {
 #[allow(dead_code)]
 pub const fn msg_ids()->&'static [i32]{
     &[
-        150003, //.RunTT.Error
-        150004, //.RunTT.Foo.Fail
-        150000, //.RunTT.PhoneNumber
         150001, //.RunTT.Foo
         150002, //.RunTT.Fail
+        150000, //.RunTT.PhoneNumber
+        150003, //.RunTT.Error
+        150004, //.RunTT.Foo.Fail
     ]
 }

@@ -185,9 +185,9 @@ dependencies = [
 
 [[package]]
 name = "prost-msg-build"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2def4ad9075a5ab1796889a1d69579fe41fde0cd0ed6103a64cc94fc413039f"
+checksum = "28f064683b4a3ad905c2cdb8c1719d81bd10466a0b8b824059c102ee9575923f"
 dependencies = [
  "bytes",
  "cfg-if",
